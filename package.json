@@ -4,12 +4,12 @@
     "description": "payment gateway",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": 'https://github.com/arjunraju1093/iTennis.git'
     },
      "engines": {
     "node": "5.9.1"
   },
-  "main": "server.js",
+  "main": "app/server.js",
   "scripts": {
     "start": "node server.js"
   },
