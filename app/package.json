@@ -2,7 +2,17 @@
     "name": "Tennis",
     "version": "1.0.0",
     "description": "payment gateway",
-   
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+     "engines": {
+    "node": "5.9.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
     "dependencies": {
         "bcryptjs": "^2.1.0",
         "body-parser": "^1.13.2",
@@ -17,6 +27,6 @@
         "q": "^1.4.1",
         "request": "^2.58.0",
         "rootpath": "^0.1.2"
-    }
-    
+    },
+    "license": "MIT"
 }
