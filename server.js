@@ -1,5 +1,6 @@
 require('rootpath')();
 var express = require('express');
+var cool = require('cool-ascii-faces');
 var app = express();
 var session = require('express-session');
 var bodyParser = require('body-parser');
@@ -24,6 +25,10 @@ app.use('/api/users', require('./controllers/api/users.controller'));
 // make '/app' default route
 app.get('/', function (req, res) {
     return res.redirect('/app');
+});
+
+app.get('/cool', function(request, response) {
+  response.send(cool());
 });
 
 // start server
