@@ -2,10 +2,7 @@
     "name": "Tennis",
     "version": "1.0.0",
     "description": "payment gateway",
-    "repository": {
-        "type": "git",
-        "url": 'https://github.com/arjunraju1093/iTennis.git'
-    },
+    
      "engines": {
     "node": "5.9.1"
   },
