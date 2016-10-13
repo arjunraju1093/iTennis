@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+
+
+
+
+
+<div class="container">
+    
+
+    
+    
+    <div class="omb_login">
+    	<h3 class="omb_authTitle">Login to Proceed</a></h3>
+		<div class="row omb_row-sm-offset-3 omb_socialButtons">
+    	    <div class="col-xs-2 col-sm-2">
+		        <a href="#" onclick='login()'  class="btn btn-lg btn-block omb_btn-facebook">
+			        <i class="fa fa-facebook visible-xs"></i>
+			        <span class="hidden-xs">Facebook</span>
+		        </a>
+	        </div>
+        		
+        	<div class="col-xs-2 col-sm-2">
+                
+               
+		        <a href="#"  data-onsuccess="onSignIn" class="btn btn-lg  btn-block  g-signin2">
+			        
+			        <span class="hidden-xs">Google+</span>
+		        </a>
+	        </div>	
+		</div>
+
+		<div class="row omb_row-sm-offset-3 omb_loginOr">
+			<div class="col-xs-12 col-sm-6">
+				<hr class="omb_hrOr">
+				<span class="omb_spanOr">or</span>
+			</div>
+		</div>
+
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">	
+                
+                  
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+			    <form class="omb_loginForm" action="" autocomplete="off" method="POST">
+				 <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" id='loginButton' class="btn btn-primary">Login</button>
+            <a href="/register" class="btn btn-link">Register</a>
+        </div>
+                    <span class="help-block"></span>
+
+				
+				</form>
+			</div>
+    	</div>
+        <iframe id="logoutframe" src="https://accounts.google.com/logout" style="visibility: hidden"></iframe>
+	<!--	<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-3">
+				<label class="checkbox">
+					<input type="checkbox" value="remember-me">Remember Me
+				</label>
+			</div>
+			<div class="col-xs-12 col-sm-3">
+				<p class="omb_forgotPwd">
+					<a href="#">Forgot password?</a>
+				</p>
+			</div>
+		</div>	-->    	
+	</div>
+
+
+
+        </div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="google-signin-client_id" content="238556497535-7mjg15ff8dc4bu7af39v3ts0lj4tggfe.apps.googleusercontent.com">
+    <title>Login</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+   
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style type="text/css">
+        body {
+            padding-top: 100px;
+        }
+
+        .form-container {
+            width: 400px;
+            margin: auto;
+        }
+
+        .credits {
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            padding-top: 20px;
+        }
+        
+        body {
+    padding: 20px 0;
+}
+
+.flash-message {
+    margin-top: 20px;
+}
+
+
+/*
+    Note: It is best to use a less version of this file ( see http://css2less.cc
+    For the media queries use @screen-sm-min instead of 768px.
+    For .omb_spanOr use @body-bg instead of white.
+*/
+
+@media (min-width: 768px) {
+    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+}
+
+.omb_login .omb_authTitle {
+    text-align: center;
+	line-height: 300%;
+}
+	
+.omb_login .omb_socialButtons a {
+	color: white; // In yourUse @body-bg 
+	opacity:0.9;
+}
+.omb_login .omb_socialButtons a:hover {
+    color: white;
+	opacity:1;    	
+}
+.omb_login .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
+.omb_login .omb_socialButtons .omb_btn-twitter {background: #00aced;}
+.omb_login .omb_socialButtons .omb_btn-google {background: #c32f10;}
+
+
+.omb_login .omb_loginOr {
+	position: relative;
+	font-size: 1.5em;
+	color: #aaa;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+.omb_login .omb_loginOr .omb_hrOr {
+	background-color: #cdcdcd;
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.omb_login .omb_loginOr .omb_spanOr {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -0.6em;
+	margin-left: -1.5em;
+	background-color: white;
+	width: 3em;
+	text-align: center;
+}			
+
+.omb_login .omb_loginForm .input-group.i {
+	width: 2em;
+}
+.omb_login .omb_loginForm  .help-block {
+    color: red;
+}
+
+	
+@media (min-width: 768px) {
+    .omb_login .omb_forgotPwd {
+        text-align: right;
+		margin-top:10px;
+ 	}		
+}
+        
+        
+    </style>
+</head>
+<body>
+    <script>
+        
+       
+       
+            window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1379281882096754',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+        
+        function login(){
+            
+            
+             FB.getLoginStatus(function(response){
+       
+                  FB.api('/me', function(response) {
+                      
+                  if(response.name){
+                       $('#username').val(response.name);
+                      $('#password').val('12345abcdefg');
+                      
+                      
+                      
+                      $('#loginButton').trigger('click');
+                    // console.log(JSON.stringify(response));
+
+                      
+                      return false;
+                  }
+                      
+                    else
+                        {
+                            
+                                      FB.login(function(res){
+                
+               
+                
+            
+                FB.api('/me', function(response) {
+                    
+                     $('#username').val(response.name);
+                      $('#password').val('12345abcdefg');
+                      
+                      $('#loginButton').trigger('click');
+                
+                    
+   // console.log(JSON.stringify(response));
+});
+                
+                
+                
+            });   
+                        }
+                      
+                                             });
+        
+    });
+                 
+                      
+                      
+                   
+                              
+                    
+                          
+                      
+                    
+                      
+                      
+                      
+
+            
+            
+          
+            
+            
+            
+        }
+        
+        function onSignIn(googleUser) {
+            
+            
+        
+            
+            
+  var profile = googleUser.getBasicProfile();
+
+         $('#username').val(profile.getEmail());
+                      $('#password').val('12345abcdefg');
+                      
+                      $('#loginButton').trigger('click');     
+            
+            
+}      
+                
+           
+
+
+        
+        
+</script>
+    
+ <div id='status'>
+    
+    </div>
+
+
