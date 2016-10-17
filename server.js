@@ -32,6 +32,6 @@ app.get('/cool', function(request, response) {
 });
 
 // start server
-var server = app..listen(process.env.PORT || 5000, function () {
+var server = app.listen(process.env.PORT || 5000, function () {
     console.log('Server listening at http://' + server.address().address + ':' + server.address().port);
 });
