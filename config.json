@@ -1,5 +1,5 @@
 ﻿{
-    "connectionString": "mongodb://example:example@ds053312.mongolab.com:53312/todolist",
+    "connectionString": "mongodb://heroku_h6t1f9rw:u6t86m2r5qoh5k3lm2v7ivq98p@ds059496.mlab.com:59496/heroku_h6t1f9rw",
     "apiUrl": "http://localhost:3000/api",
     "secret": "REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
 }
